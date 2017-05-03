@@ -235,8 +235,8 @@ describe('Unit: CLI', function() {
     });
   });
 
-  describe.only('command crash', function() {
-    it('correctly cleansup', function() {
+  describe('command crash', function() {
+    it('correctly cleans up', function() {
       let CustomCommand = Command.extend({
         name: 'custom',
 
@@ -256,7 +256,7 @@ describe('Unit: CLI', function() {
       }).catch(function(reason) {
         expect(reason.message).to.eql('OMG');
         td.verify(teardownHandler());
-      })
+      });
     });
   });
 
